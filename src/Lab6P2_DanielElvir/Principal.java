@@ -60,6 +60,18 @@ public class Principal extends javax.swing.JFrame {
         cb_TipoConexion = new javax.swing.JComboBox<>();
         AgregarEstacionario = new javax.swing.JButton();
         JD_Portatil = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        cb_TamañoPantalla = new javax.swing.JComboBox<>();
+        tf_Bateria = new javax.swing.JTextField();
+        cb_Estuche = new javax.swing.JComboBox<>();
+        crudTABLA = new javax.swing.JPopupMenu();
+        tablaModificar = new javax.swing.JMenuItem();
+        tablaEliminar = new javax.swing.JMenuItem();
         bg = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -91,10 +103,7 @@ public class Principal extends javax.swing.JFrame {
 
         jt_Consolas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Identificacion", "Fabricante", "Años de Uso", "Precio ", "Modelo", "Tipo de Consola", "Numero de Controles", "Almacenamiento", "Tipo de Conexion", "Tamaño de Pantalla", "Bateria", "Tiene Estuche?"
@@ -283,16 +292,89 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel16.setText("Detalles del Portatil");
+
+        jLabel17.setText("Tamaño de la Pantalla");
+
+        jLabel18.setText("Bateria");
+
+        jLabel19.setText("Tiene Estuche?");
+
+        jButton1.setText("Agregar Portatil");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        cb_TamañoPantalla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequeño", "Mediano", "Grande" }));
+
+        cb_Estuche.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(jLabel16))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(cb_TamañoPantalla, 0, 178, Short.MAX_VALUE)
+                                .addComponent(tf_Bateria)
+                                .addComponent(cb_Estuche, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel16)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(cb_TamañoPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(tf_Bateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(cb_Estuche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(jButton1)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout JD_PortatilLayout = new javax.swing.GroupLayout(JD_Portatil.getContentPane());
         JD_Portatil.getContentPane().setLayout(JD_PortatilLayout);
         JD_PortatilLayout.setHorizontalGroup(
             JD_PortatilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JD_PortatilLayout.setVerticalGroup(
             JD_PortatilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        tablaModificar.setText("Modificar Item");
+        crudTABLA.add(tablaModificar);
+
+        tablaEliminar.setText("Eliminar Row");
+        crudTABLA.add(tablaEliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -440,27 +522,68 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_TipoConsolaItemStateChanged
 
     private void AgregarEstacionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarEstacionarioActionPerformed
-        Estacionaria t = new Estacionaria(Integer.parseInt(tf_NumeroControles.getText()), Integer.parseInt(tf_Almacenamiento.getText()), cb_TipoConexion.getSelectedItem().toString(), tf_ID.getText(), tf_Fabricante.getText(), Integer.parseInt(tf_Años.getText()), Double.parseDouble(tf_PrecioConsola.getText()), tf_ModeloConsola.getText());
-        consolas.add(new Estacionaria(Integer.parseInt(tf_NumeroControles.getText()), Integer.parseInt(tf_Almacenamiento.getText()), cb_TipoConexion.getSelectedItem().toString(), tf_ID.getText(), tf_Fabricante.getText(), Integer.parseInt(tf_Años.getText()), Double.parseDouble(tf_PrecioConsola.getText()), tf_ModeloConsola.getText()));
-        try {
-                jt_Consolas.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object[][]{},
-                        new String[]{
-                            "Identificacion", "Fabricante", "Años de Uso", "Precio", "Modelo", "Tipo de Consola", "Numero de Controles", "Almacenamiento", "Tipo de Conexion", "Tamaño de Pantalla", "Bateria", "Tiene Estuche?" 
-                        }
-                ));
-           
+        DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
+        String ID = tf_ID.getText();
+        String Fabricante = tf_Fabricante.getText();
+        int Años = Integer.parseInt(tf_Años.getText());
+        double Precio = Double.parseDouble(tf_PrecioConsola.getText());
+        String Modelo = tf_ModeloConsola.getText();
+        int Numero_Contoles = Integer.parseInt(tf_NumeroControles.getText());
+        int Almacenamiento = Integer.parseInt(tf_Almacenamiento.getText());
+        String Tipo_Conexion = cb_TipoConexion.getSelectedItem().toString();
+        Estacionaria t = new Estacionaria(Numero_Contoles, Almacenamiento, Tipo_Conexion, ID, Fabricante, Años, Precio, Modelo);
+        try {                          
                 
                 
-                    Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), t.getClass(), t.getNumero_Controles(), t.getAlmacenamiento(), t.getTipo_Conexion()};
+                    Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), t.getNumero_Controles(), t.getAlmacenamiento(), t.getTipo_Conexion()};                    
+                    modelo.addRow(row);
+                    jt_Consolas.setModel(modelo);
+                
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        
+        JD_Estacionario.setVisible(false);
+        tf_ID.setText("");
+        tf_Fabricante.setText("");
+        tf_Años.setText("");
+        tf_PrecioConsola.setText("");
+        tf_ModeloConsola.setText("");
+    }//GEN-LAST:event_AgregarEstacionarioActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String ID = tf_ID.getText();
+        String Fabricante = tf_Fabricante.getText();
+        int Años = Integer.parseInt(tf_Años.getText());
+        double Precio = Double.parseDouble(tf_PrecioConsola.getText());
+        String Modelo = tf_ModeloConsola.getText();
+        String Tamaño_Pantalla = cb_TamañoPantalla.getSelectedItem().toString();
+        int Bateria = Integer.parseInt(tf_Bateria.getText());
+        boolean estuche=true;
+        if (cb_Estuche.getSelectedItem().equals("Si")) {
+            estuche=true;
+        }else if(cb_Estuche.getSelectedItem().equals("No")){
+            estuche = false;
+        }
+        
+        Portatil t = new Portatil(Tamaño_Pantalla, Bateria, estuche, ID, Fabricante, Años, Precio, Modelo);
+        try {                                                                
+                    Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), "", "", "", t.getTamaño_Pantalla(), t.getBateria(), t.isTieneEstuche()};
                     DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
                     modelo.addRow(row);
                     jt_Consolas.setModel(modelo);
                 
             } catch (Exception ex) {
                 ex.printStackTrace();
-            } 
-    }//GEN-LAST:event_AgregarEstacionarioActionPerformed
+            }
+        
+        JD_Portatil.setVisible(false);
+        tf_ID.setText("");
+        tf_Fabricante.setText("");
+        tf_Años.setText("");
+        tf_PrecioConsola.setText("");
+        tf_ModeloConsola.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,7 +596,7 @@ public class Principal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Metal".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -508,8 +631,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog JD_Portatil;
     private javax.swing.JButton Salir;
     private javax.swing.JPanel bg;
+    private javax.swing.JComboBox<String> cb_Estuche;
+    private javax.swing.JComboBox<String> cb_TamañoPantalla;
     private javax.swing.JComboBox<String> cb_TipoConexion;
     private javax.swing.JComboBox<String> cb_TipoConsola;
+    private javax.swing.JPopupMenu crudTABLA;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -517,6 +644,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -527,10 +658,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jt_Consolas;
+    private javax.swing.JMenuItem tablaEliminar;
+    private javax.swing.JMenuItem tablaModificar;
     private javax.swing.JTextField tf_Almacenamiento;
     private javax.swing.JTextField tf_Años;
+    private javax.swing.JTextField tf_Bateria;
     private javax.swing.JTextField tf_Fabricante;
     private javax.swing.JTextField tf_ID;
     private javax.swing.JTextField tf_ModeloConsola;
