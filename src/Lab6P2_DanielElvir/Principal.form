@@ -253,6 +253,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jt_ConsolasMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -590,6 +593,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Eliminar Row"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tablaEliminarActionPerformed"/>
+          </Events>
         </MenuItem>
       </SubComponents>
     </Container>

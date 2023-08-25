@@ -6,6 +6,7 @@ package Lab6P2_DanielElvir;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -115,6 +116,11 @@ public class Principal extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jt_Consolas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_ConsolasMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jt_Consolas);
@@ -374,6 +380,11 @@ public class Principal extends javax.swing.JFrame {
         crudTABLA.add(tablaModificar);
 
         tablaEliminar.setText("Eliminar Row");
+        tablaEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tablaEliminarActionPerformed(evt);
+            }
+        });
         crudTABLA.add(tablaEliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -532,17 +543,16 @@ public class Principal extends javax.swing.JFrame {
         int Almacenamiento = Integer.parseInt(tf_Almacenamiento.getText());
         String Tipo_Conexion = cb_TipoConexion.getSelectedItem().toString();
         Estacionaria t = new Estacionaria(Numero_Contoles, Almacenamiento, Tipo_Conexion, ID, Fabricante, Años, Precio, Modelo);
-        try {                          
-                
-                
-                    Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), t.getNumero_Controles(), t.getAlmacenamiento(), t.getTipo_Conexion()};                    
-                    modelo.addRow(row);
-                    jt_Consolas.setModel(modelo);
-                
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        
+        try {
+
+            Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), t.getNumero_Controles(), t.getAlmacenamiento(), t.getTipo_Conexion()};
+            modelo.addRow(row);
+            jt_Consolas.setModel(modelo);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
         JD_Estacionario.setVisible(false);
         tf_ID.setText("");
         tf_Fabricante.setText("");
@@ -559,24 +569,24 @@ public class Principal extends javax.swing.JFrame {
         String Modelo = tf_ModeloConsola.getText();
         String Tamaño_Pantalla = cb_TamañoPantalla.getSelectedItem().toString();
         int Bateria = Integer.parseInt(tf_Bateria.getText());
-        boolean estuche=true;
+        boolean estuche = true;
         if (cb_Estuche.getSelectedItem().equals("Si")) {
-            estuche=true;
-        }else if(cb_Estuche.getSelectedItem().equals("No")){
+            estuche = true;
+        } else if (cb_Estuche.getSelectedItem().equals("No")) {
             estuche = false;
         }
-        
+
         Portatil t = new Portatil(Tamaño_Pantalla, Bateria, estuche, ID, Fabricante, Años, Precio, Modelo);
-        try {                                                                
-                    Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), "", "", "", t.getTamaño_Pantalla(), t.getBateria(), t.isTieneEstuche()};
-                    DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
-                    modelo.addRow(row);
-                    jt_Consolas.setModel(modelo);
-                
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        
+        try {
+            Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), "", "", "", t.getTamaño_Pantalla(), t.getBateria(), t.isTieneEstuche()};
+            DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
+            modelo.addRow(row);
+            jt_Consolas.setModel(modelo);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
         JD_Portatil.setVisible(false);
         tf_ID.setText("");
         tf_Fabricante.setText("");
@@ -584,6 +594,29 @@ public class Principal extends javax.swing.JFrame {
         tf_PrecioConsola.setText("");
         tf_ModeloConsola.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jt_ConsolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_ConsolasMouseClicked
+        if (evt.isMetaDown()) {
+            crudTABLA.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jt_ConsolasMouseClicked
+
+    private void tablaEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablaEliminarActionPerformed
+        int response = JOptionPane.showConfirmDialog(
+                JD_Consola,
+                "Seguro de Eliminar?",
+                "Confirm",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.OK_OPTION) {
+
+            DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
+            int rowSelect = jt_Consolas.getSelectedRow();
+            modelo.removeRow(rowSelect);
+            jt_Consolas.setModel(modelo);
+        }
+    }//GEN-LAST:event_tablaEliminarActionPerformed
 
     /**
      * @param args the command line arguments
