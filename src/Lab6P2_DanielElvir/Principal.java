@@ -50,6 +50,29 @@ public class Principal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         cb_TipoConsola = new javax.swing.JComboBox<>();
         JD_Juegos = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        cb_Consolas = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        tf_Nombre = new javax.swing.JTextField();
+        tf_Descripcion = new javax.swing.JTextField();
+        jdc_Fecha = new com.toedter.calendar.JDateChooser();
+        tf_Precio = new javax.swing.JTextField();
+        cb_Estado = new javax.swing.JComboBox<>();
+        cb_Rentable = new javax.swing.JComboBox<>();
+        cb_Agregado = new javax.swing.JComboBox<>();
+        sp_Cantidad = new javax.swing.JSpinner();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         JD_Estacionario = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -210,15 +233,145 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel20.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel20.setText("Agregar Juegos");
+
+        jLabel21.setText("Consola a la cual pertenece:");
+
+        cb_Consolas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel22.setText("Nombre");
+
+        jLabel23.setText("Descripcion");
+
+        jLabel24.setText("Fecha de Lanzamiento");
+
+        jLabel25.setText("Precio");
+
+        jLabel26.setText("Estado");
+
+        jLabel27.setText("Es rentable?");
+
+        jLabel28.setText("Tiene Agregado?");
+
+        jLabel29.setText("Cantidad Disponible");
+
+        cb_Estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nuevo", "Usado" }));
+
+        cb_Rentable.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+
+        cb_Agregado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+
+        jButton2.setText("Agregar Juego");
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(cb_Consolas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_Nombre)
+                        .addComponent(tf_Descripcion)
+                        .addComponent(jdc_Fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(tf_Precio)
+                        .addComponent(cb_Estado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cb_Rentable, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cb_Agregado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(sp_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(140, 140, 140)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 81, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(327, 327, 327)
+                        .addComponent(jLabel20))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(249, 249, 249)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(cb_Consolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(tf_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(tf_Descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jdc_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(tf_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(cb_Estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(cb_Rentable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(cb_Agregado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(sp_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout JD_JuegosLayout = new javax.swing.GroupLayout(JD_Juegos.getContentPane());
         JD_Juegos.getContentPane().setLayout(JD_JuegosLayout);
         JD_JuegosLayout.setHorizontalGroup(
             JD_JuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JD_JuegosLayout.setVerticalGroup(
             JD_JuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
@@ -543,6 +696,7 @@ public class Principal extends javax.swing.JFrame {
         int Almacenamiento = Integer.parseInt(tf_Almacenamiento.getText());
         String Tipo_Conexion = cb_TipoConexion.getSelectedItem().toString();
         Estacionaria t = new Estacionaria(Numero_Contoles, Almacenamiento, Tipo_Conexion, ID, Fabricante, Años, Precio, Modelo);
+        consolas.add(t);
         try {
 
             Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), t.getNumero_Controles(), t.getAlmacenamiento(), t.getTipo_Conexion()};
@@ -553,12 +707,13 @@ public class Principal extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        JD_Estacionario.setVisible(false);
+        
         tf_ID.setText("");
         tf_Fabricante.setText("");
         tf_Años.setText("");
         tf_PrecioConsola.setText("");
         tf_ModeloConsola.setText("");
+        JD_Estacionario.setVisible(false);
     }//GEN-LAST:event_AgregarEstacionarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -577,6 +732,7 @@ public class Principal extends javax.swing.JFrame {
         }
 
         Portatil t = new Portatil(Tamaño_Pantalla, Bateria, estuche, ID, Fabricante, Años, Precio, Modelo);
+        consolas.add(t);
         try {
             Object[] row = {t.getID(), t.getFabrincante(), t.getAños_Uso(), t.getPrecio(), t.getModelo(), cb_TipoConsola.getSelectedItem().toString(), "", "", "", t.getTamaño_Pantalla(), t.getBateria(), t.isTieneEstuche()};
             DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
@@ -587,12 +743,13 @@ public class Principal extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        JD_Portatil.setVisible(false);
+        
         tf_ID.setText("");
         tf_Fabricante.setText("");
         tf_Años.setText("");
         tf_PrecioConsola.setText("");
         tf_ModeloConsola.setText("");
+        JD_Portatil.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jt_ConsolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_ConsolasMouseClicked
@@ -664,12 +821,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog JD_Portatil;
     private javax.swing.JButton Salir;
     private javax.swing.JPanel bg;
+    private javax.swing.JComboBox<String> cb_Agregado;
+    private javax.swing.JComboBox<String> cb_Consolas;
+    private javax.swing.JComboBox<String> cb_Estado;
     private javax.swing.JComboBox<String> cb_Estuche;
+    private javax.swing.JComboBox<String> cb_Rentable;
     private javax.swing.JComboBox<String> cb_TamañoPantalla;
     private javax.swing.JComboBox<String> cb_TipoConexion;
     private javax.swing.JComboBox<String> cb_TipoConsola;
     private javax.swing.JPopupMenu crudTABLA;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -682,6 +844,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -689,20 +861,28 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private com.toedter.calendar.JDateChooser jdc_Fecha;
     private javax.swing.JTable jt_Consolas;
+    private javax.swing.JSpinner sp_Cantidad;
     private javax.swing.JMenuItem tablaEliminar;
     private javax.swing.JMenuItem tablaModificar;
     private javax.swing.JTextField tf_Almacenamiento;
     private javax.swing.JTextField tf_Años;
     private javax.swing.JTextField tf_Bateria;
+    private javax.swing.JTextField tf_Descripcion;
     private javax.swing.JTextField tf_Fabricante;
     private javax.swing.JTextField tf_ID;
     private javax.swing.JTextField tf_ModeloConsola;
+    private javax.swing.JTextField tf_Nombre;
     private javax.swing.JTextField tf_NumeroControles;
+    private javax.swing.JTextField tf_Precio;
     private javax.swing.JTextField tf_PrecioConsola;
     // End of variables declaration//GEN-END:variables
 
