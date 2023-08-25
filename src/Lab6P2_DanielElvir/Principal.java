@@ -289,7 +289,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel30.setText("Juegos de la Consola");
 
-        cb_JuegosList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_JuegosList.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_JuegosListItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -873,6 +877,15 @@ public class Principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void cb_JuegosListItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_JuegosListItemStateChanged
+        DefaultListModel modeloLista = (DefaultListModel) jl_Juegos.getModel();
+        modeloLista.removeAllElements();
+        consolaselec = (Consola) cb_JuegosList.getSelectedItem();
+        modeloLista.addAll(consolaselec.getJuegos());
+        jl_Juegos.setModel(modeloLista);
+
+    }//GEN-LAST:event_cb_JuegosListItemStateChanged
 
     /**
      * @param args the command line arguments
