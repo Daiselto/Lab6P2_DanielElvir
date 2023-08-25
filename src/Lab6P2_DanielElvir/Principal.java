@@ -102,6 +102,9 @@ public class Principal extends javax.swing.JFrame {
         crudTABLA = new javax.swing.JPopupMenu();
         tablaModificar = new javax.swing.JMenuItem();
         tablaEliminar = new javax.swing.JMenuItem();
+        crudLISTA = new javax.swing.JPopupMenu();
+        ModificarJuego = new javax.swing.JMenuItem();
+        EliminarJuego = new javax.swing.JMenuItem();
         bg = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -285,6 +288,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jl_Juegos.setModel(new DefaultListModel());
+        jl_Juegos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_JuegosMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jl_Juegos);
 
         jLabel30.setText("Juegos de la Consola");
@@ -569,6 +577,11 @@ public class Principal extends javax.swing.JFrame {
         );
 
         tablaModificar.setText("Modificar Item");
+        tablaModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tablaModificarActionPerformed(evt);
+            }
+        });
         crudTABLA.add(tablaModificar);
 
         tablaEliminar.setText("Eliminar Row");
@@ -578,6 +591,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         crudTABLA.add(tablaEliminar);
+
+        ModificarJuego.setText("Modifica el Juego");
+        crudLISTA.add(ModificarJuego);
+
+        EliminarJuego.setText("Elimina el Juego");
+        EliminarJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarJuegoActionPerformed(evt);
+            }
+        });
+        crudLISTA.add(EliminarJuego);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -887,6 +911,38 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cb_JuegosListItemStateChanged
 
+    private void jl_JuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_JuegosMouseClicked
+        if (jl_Juegos.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                crudLISTA.show(evt.getComponent(),
+                        evt.getX(), evt.getY());
+
+            }
+        }
+    }//GEN-LAST:event_jl_JuegosMouseClicked
+
+    private void tablaModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablaModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tablaModificarActionPerformed
+
+    private void EliminarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarJuegoActionPerformed
+        int response = JOptionPane.showConfirmDialog(
+                JD_Juegos,
+                "Seguro de Eliminar?",
+                "Confirm",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.OK_OPTION) {
+                    DefaultListModel modelo
+                            = (DefaultListModel) jl_Juegos.getModel();
+                    modelo.remove(jl_Juegos.getSelectedIndex());
+                    jl_Juegos.setModel(modelo);
+                    JOptionPane.showMessageDialog(JD_Juegos,
+                            "Eliminado exitosamente");
+                }
+    }//GEN-LAST:event_EliminarJuegoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -929,10 +985,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton AgregarEstacionario;
     private javax.swing.JButton AgregarJuego;
     private javax.swing.JButton AgregarPortatil;
+    private javax.swing.JMenuItem EliminarJuego;
     private javax.swing.JDialog JD_Consola;
     private javax.swing.JDialog JD_Estacionario;
     private javax.swing.JDialog JD_Juegos;
     private javax.swing.JDialog JD_Portatil;
+    private javax.swing.JMenuItem ModificarJuego;
     private javax.swing.JButton Salir;
     private javax.swing.JPanel bg;
     private javax.swing.JComboBox<String> cb_Agregado;
@@ -944,6 +1002,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_TamañoPantalla;
     private javax.swing.JComboBox<String> cb_TipoConexion;
     private javax.swing.JComboBox<String> cb_TipoConsola;
+    private javax.swing.JPopupMenu crudLISTA;
     private javax.swing.JPopupMenu crudTABLA;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
