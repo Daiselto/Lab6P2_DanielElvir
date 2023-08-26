@@ -971,13 +971,13 @@ public class Principal extends javax.swing.JFrame {
                     jt_Consolas.getSelectedRow(), 1)).setFabrincante(Fabricante);
             int Años = Integer.parseInt(JOptionPane.showInputDialog("nuevo Año"));
             ((Consola) modelo.getValueAt(
-                    jt_Consolas.getSelectedRow(), 1)).setAños_Uso(Años);
+                    jt_Consolas.getSelectedRow(), 2)).setAños_Uso(Años);
             double Precio = Double.parseDouble(JOptionPane.showInputDialog("nuevo Precio"));
             ((Consola) modelo.getValueAt(
-                    jt_Consolas.getSelectedRow(), 1)).setPrecio(Precio);
+                    jt_Consolas.getSelectedRow(), 3)).setPrecio(Precio);
             String Modelo = JOptionPane.showInputDialog("nuevo Modelo");
             ((Consola) modelo.getValueAt(
-                    jt_Consolas.getSelectedRow(), 1)).setModelo(Modelo);
+                    jt_Consolas.getSelectedRow(), 4)).setModelo(Modelo);
             jt_Consolas.setModel(modelo);
 
         }
