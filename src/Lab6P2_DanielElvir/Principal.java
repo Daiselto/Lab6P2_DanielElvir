@@ -775,7 +775,7 @@ public class Principal extends javax.swing.JFrame {
             DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
             String ID = tf_ID.getText();
             boolean validado = true;
-            String IDVal="";
+            String IDVal = "";
             if (ID.length() < 8) {
                 for (int i = 0; i < ID.length(); i++) {
                     char c = ID.charAt(i);
@@ -957,7 +957,30 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_JuegosMouseClicked
 
     private void tablaModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablaModificarActionPerformed
-        // TODO add your handling code here:
+        if (jt_Consolas.getSelectedRow() >= 0) {
+            DefaultTableModel modelo
+                    = (DefaultTableModel) jt_Consolas.getModel();
+
+            String ID
+                    = JOptionPane.showInputDialog("nuevo ID");
+            ((Consola) modelo.getValueAt(
+                    jt_Consolas.getSelectedRow(), 0)).setID(ID);
+            String Fabricante
+                    = JOptionPane.showInputDialog("nuevo Fabricante");
+            ((Consola) modelo.getValueAt(
+                    jt_Consolas.getSelectedRow(), 1)).setFabrincante(Fabricante);
+            int Años = Integer.parseInt(JOptionPane.showInputDialog("nuevo Año"));
+            ((Consola) modelo.getValueAt(
+                    jt_Consolas.getSelectedRow(), 1)).setAños_Uso(Años);
+            double Precio = Double.parseDouble(JOptionPane.showInputDialog("nuevo Precio"));
+            ((Consola) modelo.getValueAt(
+                    jt_Consolas.getSelectedRow(), 1)).setPrecio(Precio);
+            String Modelo = JOptionPane.showInputDialog("nuevo Modelo");
+            ((Consola) modelo.getValueAt(
+                    jt_Consolas.getSelectedRow(), 1)).setModelo(Modelo);
+            jt_Consolas.setModel(modelo);
+
+        }
     }//GEN-LAST:event_tablaModificarActionPerformed
 
     private void EliminarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarJuegoActionPerformed
@@ -986,7 +1009,6 @@ public class Principal extends javax.swing.JFrame {
                     jl_Juegos.getSelectedIndex())).
                     setNombre(JOptionPane.showInputDialog("Nombre Nuevo"));
             jl_Juegos.setModel(modeloLISTA);
-            
 
         }
     }//GEN-LAST:event_ModificarJuegoActionPerformed
