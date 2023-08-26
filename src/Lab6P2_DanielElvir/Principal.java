@@ -593,6 +593,11 @@ public class Principal extends javax.swing.JFrame {
         crudTABLA.add(tablaEliminar);
 
         ModificarJuego.setText("Modifica el Juego");
+        ModificarJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarJuegoActionPerformed(evt);
+            }
+        });
         crudLISTA.add(ModificarJuego);
 
         EliminarJuego.setText("Elimina el Juego");
@@ -769,6 +774,36 @@ public class Principal extends javax.swing.JFrame {
         try {
             DefaultTableModel modelo = (DefaultTableModel) jt_Consolas.getModel();
             String ID = tf_ID.getText();
+            boolean validado = true;
+            String IDVal="";
+            if (ID.length() < 8) {
+                for (int i = 0; i < ID.length(); i++) {
+                    char c = ID.charAt(i);
+                    if (i >= 0 && i < 3) {
+                        if (Character.isDigit(c)) {
+                            validado = true;
+                        } else {
+                            validado = false;
+                        }
+
+                    }
+
+                    if (i > 3 && i < 8) {
+                        if (Character.isLetter(c)) {
+                            validado = true;
+                        } else {
+                            validado = false;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            if (validado) {
+                IDVal = ID;
+            }
             String Fabricante = tf_Fabricante.getText();
             int Años = Integer.parseInt(tf_Años.getText());
             double Precio = Double.parseDouble(tf_PrecioConsola.getText());
@@ -776,7 +811,7 @@ public class Principal extends javax.swing.JFrame {
             int Numero_Contoles = Integer.parseInt(tf_NumeroControles.getText());
             int Almacenamiento = Integer.parseInt(tf_Almacenamiento.getText());
             String Tipo_Conexion = cb_TipoConexion.getSelectedItem().toString();
-            Estacionaria t = new Estacionaria(Numero_Contoles, Almacenamiento, Tipo_Conexion, ID, Fabricante, Años, Precio, Modelo);
+            Estacionaria t = new Estacionaria(Numero_Contoles, Almacenamiento, Tipo_Conexion, IDVal, Fabricante, Años, Precio, Modelo);
             consolas.add(t);
             try {
 
@@ -934,14 +969,27 @@ public class Principal extends javax.swing.JFrame {
                 JOptionPane.QUESTION_MESSAGE);
 
         if (response == JOptionPane.OK_OPTION) {
-                    DefaultListModel modelo
-                            = (DefaultListModel) jl_Juegos.getModel();
-                    modelo.remove(jl_Juegos.getSelectedIndex());
-                    jl_Juegos.setModel(modelo);
-                    JOptionPane.showMessageDialog(JD_Juegos,
-                            "Eliminado exitosamente");
-                }
+            DefaultListModel modelo
+                    = (DefaultListModel) jl_Juegos.getModel();
+            modelo.remove(jl_Juegos.getSelectedIndex());
+            jl_Juegos.setModel(modelo);
+            JOptionPane.showMessageDialog(JD_Juegos,
+                    "Eliminado exitosamente");
+        }
     }//GEN-LAST:event_EliminarJuegoActionPerformed
+
+    private void ModificarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarJuegoActionPerformed
+        if (jl_Juegos.getSelectedIndex() >= 0) {
+            DefaultListModel modeloLISTA
+                    = (DefaultListModel) jl_Juegos.getModel();
+            ((Juego) modeloLISTA.get(
+                    jl_Juegos.getSelectedIndex())).
+                    setNombre(JOptionPane.showInputDialog("Nombre Nuevo"));
+            jl_Juegos.setModel(modeloLISTA);
+            
+
+        }
+    }//GEN-LAST:event_ModificarJuegoActionPerformed
 
     /**
      * @param args the command line arguments
